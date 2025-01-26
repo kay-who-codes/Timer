@@ -1,0 +1,99 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #121212; /* Dark background */
+  color: #e0e0e0; /* Soft white text */
+}
+
+/* Timer Container */
+.timer-container {
+  text-align: center;
+}
+
+/* Timer Display Input */
+.display {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+#timeInput {
+  width: 200px;
+  text-align: center;
+  font-size: 3rem;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  background: transparent;
+  color: #e0e0e0;
+  outline: none;
+}
+
+/* Keypad Styling */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-gap: 15px;
+  justify-content: center;
+}
+
+.key {
+  width: 70px;
+  height: 70px;
+  font-size: 1.5rem;
+  background: #1f1f1f; /* Dark key background */
+  color: #e0e0e0; /* Soft white text */
+  border: 2px solid #2a2a2a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.key:hover {
+  transform: scale(1.1);
+  background: #333333; /* Slightly lighter hover effect */
+}
+
+.clear {
+  grid-column: span 2;
+  background: #d9534f; /* Red clear button */
+  color: white;
+}
+
+.clear:hover {
+  background: #c9302c; /* Darker red hover */
+}
+
+.start {
+  background: #5cb85c; /* Green start button */
+  color: white;
+}
+
+.start:hover {
+  background: #4cae4c; /* Darker green hover */
+}
+
+/* Stop Button Styling */
+#stopButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background: #d9534f; /* Red stop button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#stopButton:hover {
+  background: #c9302c; /* Darker red hover */
+}
+
+.hidden {
+  display: none;
+}
