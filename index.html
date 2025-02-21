@@ -7,28 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="header"></div>
-  <div class="timer-container">
-    <div class="display">
-      <input id="timeInput" type="text" placeholder="00:00" maxlength="5">
+  <main>
+    <div id="header"></div>
+    <div class="timer-container">
+      <div class="display">
+        <input id="timeInput" type="text" placeholder="00:00" maxlength="5">
+      </div>
+      <div class="keypad">
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key clear">Clear</button>
+        <button class="key" data-value="0">0</button>
+        <button class="key start">Start</button>
+      </div>
+      <button id="stopButton" class="stop hidden">Stop Timer</button>
     </div>
-    <div class="keypad">
-      <button class="key" data-value="1">1</button>
-      <button class="key" data-value="2">2</button>
-      <button class="key" data-value="3">3</button>
-      <button class="key" data-value="4">4</button>
-      <button class="key" data-value="5">5</button>
-      <button class="key" data-value="6">6</button>
-      <button class="key" data-value="7">7</button>
-      <button class="key" data-value="8">8</button>
-      <button class="key" data-value="9">9</button>
-      <button class="key clear">Clear</button>
-      <button class="key" data-value="0">0</button>
-      <button class="key start">Start</button>
-    </div>
-    <button id="stopButton" class="stop hidden">Stop Timer</button>
-  </div>
-
+  </main>
   <audio id="alarm" src="timer.mp3" loop></audio>
   <script src="script.js"></script>
 </body>
