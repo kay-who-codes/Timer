@@ -3,7 +3,7 @@ const timeInput = document.getElementById("timeInput");
 const stopButton = document.getElementById("stopButton");
 const alarm = document.getElementById("alarm");
 
-// Get Header
+// Fetch and inject the header
 fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
   .then(response => {
     if (!response.ok) {
@@ -13,11 +13,33 @@ fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
   })
   .then(data => {
     document.getElementById('header').innerHTML = data;
+
+    // Add event listeners after injecting the header
+    const dropbtn = document.querySelector('.dropbtn');
+    if (dropbtn) {
+      dropbtn.addEventListener('click', toggleDropdown);
+    }
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', (event) => {
+      const dropdown = document.querySelector('.dropdown');
+      if (dropdown && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
   })
   .catch(error => {
     console.error('Error loading header:', error);
     document.getElementById('header').innerHTML = '<p>Header failed to load.</p>';
   });
+
+// Toggle dropdown visibility
+function toggleDropdown() {
+  const dropdown = document.querySelector('.dropdown');
+  dropdown.classList.toggle('show');
+}
+
+// App Scipting
 
 // Add event listeners for the custom number pad
 document.querySelectorAll(".key").forEach((key) => {
