@@ -3,17 +3,26 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background: #121212; /* Dark background */
   color: #e0e0e0; /* Soft white text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Timer Container */
 .timer-container {
   text-align: center;
+  margin-top: 20px; /* Add some space below the header */
 }
 
 /* Timer Display Input */
