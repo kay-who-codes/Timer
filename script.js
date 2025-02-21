@@ -3,6 +3,13 @@ const timeInput = document.getElementById("timeInput");
 const stopButton = document.getElementById("stopButton");
 const alarm = document.getElementById("alarm");
 
+// Get Header
+fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+
 // Add event listeners for the custom number pad
 document.querySelectorAll(".key").forEach((key) => {
   key.addEventListener("click", () => {
