@@ -3,7 +3,7 @@ const timeInput = document.getElementById("timeInput");
 const stopButton = document.getElementById("stopButton");
 const alarm = document.getElementById("alarm");
 
-// Fetch and inject the header
+// ADD HEADER
 fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
   .then(response => {
     if (!response.ok) {
@@ -37,6 +37,22 @@ fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
 function toggleDropdown() {
   const dropdown = document.querySelector('.dropdown');
   dropdown.classList.toggle('show');
+}
+
+// Rename Header
+const headerLink = document.querySelector('.header-link');
+
+if (headerLink) {
+  // Extract app name from the URL path (e.g., "Minimalistic-Timer")
+  const pathSegments = window.location.pathname.split('/').filter(segment => segment);
+  const repoName = pathSegments[0] || 'APP_NAME_GOES_HERE'; // First non-empty path segment
+
+  // Convert repo name to display name (e.g., "Minimalistic Timer")
+  const appName = repoName.replace(/-/g, ' ');
+  
+  // Update the link text and URL
+  headerLink.textContent = appName;
+  headerLink.href = `https://github.com/kay-who-codes/${repoName}`;
 }
 
 // Add event listeners for the custom number pad
