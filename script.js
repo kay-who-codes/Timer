@@ -14,6 +14,18 @@ fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
   .then(data => {
     document.getElementById('header').innerHTML = data;
 
+    // Update the header link dynamically
+    const headerLink = document.querySelector('.header-link');
+    if (headerLink) {
+      // Option 1: Extract from URL
+      const pathSegments = window.location.pathname.split('/').filter(segment => segment);
+      const repoName = pathSegments[0] || 'APP_NAME_GOES_HERE';
+      const appName = repoName.replace(/-/g, ' ');
+      
+      headerLink.textContent = appName;
+      headerLink.href = `https://github.com/kay-who-codes/${repoName}`;
+    }
+
     // Add event listeners after injecting the header
     const dropbtn = document.querySelector('.dropbtn');
     if (dropbtn) {
@@ -37,22 +49,6 @@ fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
 function toggleDropdown() {
   const dropdown = document.querySelector('.dropdown');
   dropdown.classList.toggle('show');
-}
-
-// Rename Header
-const headerLink = document.querySelector('.header-link');
-
-if (headerLink) {
-  // Extract app name from the URL path (e.g., "Minimalistic-Timer")
-  const pathSegments = window.location.pathname.split('/').filter(segment => segment);
-  const repoName = pathSegments[0] || 'APP_NAME_GOES_HERE'; // First non-empty path segment
-
-  // Convert repo name to display name (e.g., "Minimalistic Timer")
-  const appName = repoName.replace(/-/g, ' ');
-  
-  // Update the link text and URL
-  headerLink.textContent = appName;
-  headerLink.href = `https://github.com/kay-who-codes/${repoName}`;
 }
 
 // Add event listeners for the custom number pad
