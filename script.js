@@ -5,9 +5,18 @@ const alarm = document.getElementById("alarm");
 
 // Get Header
 fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to load header');
+    }
+    return response.text();
+  })
   .then(data => {
     document.getElementById('header').innerHTML = data;
+  })
+  .catch(error => {
+    console.error('Error loading header:', error);
+    document.getElementById('header').innerHTML = '<p>Header failed to load.</p>';
   });
 
 // Add event listeners for the custom number pad
