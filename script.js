@@ -39,8 +39,6 @@ function toggleDropdown() {
   dropdown.classList.toggle('show');
 }
 
-// App Scipting
-
 // Add event listeners for the custom number pad
 document.querySelectorAll(".key").forEach((key) => {
   key.addEventListener("click", () => {
