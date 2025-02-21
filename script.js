@@ -4,7 +4,7 @@ const stopButton = document.getElementById("stopButton");
 const alarm = document.getElementById("alarm");
 
 // ADD HEADER
-fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full Header.html')
+fetch('https://kay-who-codes.github.io/Kay-App-Assets/Full-Header.html')
   .then(response => {
     if (!response.ok) {
       throw new Error('Failed to load header');
